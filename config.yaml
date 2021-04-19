@@ -1,0 +1,5 @@
+---
+document:
+    SPREADSHEET_ID: '1dr21Kh9X-cdWqxb8u6lpJveZ_fpFFnD3NzTtWFAfT1I'
+    RANGE: ['Stocks!A1:E','Crypto!A1:E']
+    SCOPES: ['https://www.googleapis.com/auth/spreadsheets.readonly']
