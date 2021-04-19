@@ -4,6 +4,6 @@
 # Other files and folders
 .settings/
 *.json
-
+*.pyc
 # Executables
 
