@@ -22,20 +22,22 @@ class Portfolio:
         _df_stocks = dfr
         curr_price = 0
         for index, rows in _df_stocks.iterrows():
-            if not (rows['Category'].lower() == 'cash'):
-                if rows['Category'].lower() == 'stocks': 
-                    data = yf.download(tickers=rows['Ticker'], period='1d',interval='1m',progress=False)
-                    df_tail = data.tail(1)
-                    curr_price = "{:.2f}".format(df_tail.Close.values[0])
-                elif rows['Category'].lower() == 'crypto':
-                    val = cryptocompare.get_price(rows['Ticker'], currency='USD')
-                    curr_price=val[rows['Ticker']]['USD'] 
+            
+            if rows['Category'].lower() == 'stocks': 
+                data = yf.download(tickers=rows['Ticker'], period='1d',interval='1m',progress=False)
+                df_tail = data.tail(1)
+                curr_price = "{:.2f}".format(df_tail.Close.values[0])
+            elif rows['Category'].lower() == 'crypto':
+                val = cryptocompare.get_price(rows['Ticker'], currency='USD')
+                curr_price=val[rows['Ticker']]['USD'] 
+            else:
+                break
                 
-                _df_stocks.at[index,"Current_Price"] = curr_price
-                _df_stocks.astype({"Current_Price":'float64'})
-                _df_stocks.at[index,"Total_cost_basis"] = "{:.2f}".format(float(rows["Cost_Basis"]) * float(rows["Shares"]))
-                _df_stocks.at[index,"Total_Value"] = "{:.2f}".format(float(curr_price) * float(rows["Shares"]))
-                _df_stocks.at[index,"Return_%"] = "{:.2f}".format(self._return(curr_price, _df_stocks.iloc[index].Cost_Basis))
+            _df_stocks.at[index,"Current_Price"] = curr_price
+            _df_stocks.astype({"Current_Price":'float64'})
+            _df_stocks.at[index,"Total_cost_basis"] = "{:.2f}".format(float(rows["Cost_Basis"]) * float(rows["Shares"]))
+            _df_stocks.at[index,"Total_Value"] = "{:.2f}".format(float(curr_price) * float(rows["Shares"]))
+            _df_stocks.at[index,"Return_%"] = "{:.2f}".format(self._return(curr_price, _df_stocks.iloc[index].Cost_Basis))
                 
         _df_stocks=_df_stocks.astype({"Total_Value":'float64',"Return_%":'float64','Total_cost_basis':'float64'})
         return dict(frame=_df_stocks, tab=tab)

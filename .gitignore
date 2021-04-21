@@ -5,5 +5,9 @@
 .settings/
 *.json
 *.pyc
+MANIFEST
+dist/
+build/
+*egg-info*/
 # Executables
 

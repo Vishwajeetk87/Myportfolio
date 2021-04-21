@@ -14,10 +14,10 @@ def read_portfolio():
     Prints values from a sample spreadsheet.
     """
     creds = None
-    dirpath = os.path.dirname(os.path.realpath(__file__))
-    dirpath = "\\".join(dirpath.split('\\')[:-1])
+    #dirpath = os.path.dirname(os.path.realpath(__file__))
+    #dirpath = "\\".join(dirpath.split('\\')[:-1])
     
-    with open(f'{dirpath}\config.yaml') as file:
+    with open(f'config.yaml') as file:
         doc = yaml.load(file, Loader=yaml.FullLoader)
 
     SPREADSHEET_ID = doc['document']['SPREADSHEET_ID']
