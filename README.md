@@ -26,8 +26,9 @@ Refer to steps mentioned under "Create Desktop application credentials".
  **3) Command.**
  - to run this utility run myportfolio --myportfolio , this will give return on overall portfolio.
  
- 4) About Myportfolio
-- This code will show you your overall return on investment on stock and crypto.
+**4) About Myportfolio**
+
+  - This code will show you your overall return on investment on stock and crypto.
 
 - All you need is to list down your Stock and crypto purchases in google sheets.
 
