@@ -4,7 +4,7 @@
 
 **Installation:**
 Once python is installed run command below.
- pip install git+https://github.com/Vishwajeetk87/Myportfolio.git
+  **pip install git+https://github.com/Vishwajeetk87/Myportfolio.git**
 
 **Steps to Execute** :
 
