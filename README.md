@@ -1,4 +1,4 @@
-# Myportfolio
+# Portfolio tracker
 
 - Download Python 3.7  [here](https://www.python.org/downloads/)
 
@@ -24,7 +24,7 @@ Refer to steps mentioned under "Create Desktop application credentials".
  make sure config.yaml is created where you would run this utility from.
  
  **3) Command.**
- - to run this utility run myportfolio --myportfolio , this will give return on overall portfolio.
+ - to run this utility run portfolio_tracker --myportfolio , this will give return on overall portfolio.
  
 **4) About Myportfolio**
 
